@@ -241,8 +241,562 @@ dt_AFP_DCP <- AFP_DCP %>%
 dt_AFP_DCP
 ```
 
+## AFP dengan kombinasi AFP-L3 dan GCP3
 
-```{bash}
-#cp marker_HCC.html docs/index.html
+
+```{r}
+#| label: tbl-afp-gpc3
+#| message: false
+#| warning: false
+#| echo: false
+#| tbl-cap: "Data performa diagnostik Alfa-Feto Protein kombinasi GCP3 sebagai marker Karsinoma Hepatoselular."
+
+
+AFP_GPC3 <- lengkap %>% 
+      select(No, Biomarker, Author, Year, Region, 'Case-control', Sensitivity, Specificity) %>%
+      filter(Biomarker == "AFP+GPC3")
+
+dt_AFP_GPC3 <- AFP_GPC3 %>% 
+  dplyr::mutate(
+    Sensitivitas = Sensitivity * 100,
+    Spesifisitas = Specificity * 100
+  ) %>%
+  gt() %>% 
+  gt_plt_bar_pct(
+    Sensitivitas,
+    labels = TRUE,
+    scaled = TRUE
+  ) %>%
+  gt_plt_bar_pct(
+    Spesifisitas,
+    labels = TRUE,
+    fill = "forestgreen",
+    scaled = TRUE
+  ) %>%
+  cols_label(
+    Author = "Peneliti",
+    Year = "Tahun",
+    Region = "Negara",
+    "Case-control" = "Kasus-Kontrol"
+  ) %>%
+  cols_hide(columns = c(Biomarker, Sensitivity, Specificity))
+
+dt_AFP_GPC3
 ```
+
+## DCP atau PIVKA-II
+
+
+```{r}
+#| label: tbl-dcp
+#| message: false
+#| warning: false
+#| echo: false
+#| tbl-cap: "Data performa diagnostik DCP sebagai marker Karsinoma Hepatoselular."
+
+
+DCP <- lengkap %>% 
+      select(No, Biomarker, Author, Year, Region, 'Case-control', Sensitivity, Specificity) %>%
+      filter(Biomarker == "DCP")
+
+dt_DCP <- DCP %>% 
+  dplyr::mutate(
+    Sensitivitas = Sensitivity * 100,
+    Spesifisitas = Specificity * 100
+  ) %>%
+  gt() %>% 
+  gt_plt_bar_pct(
+    Sensitivitas,
+    labels = TRUE,
+    scaled = TRUE
+  ) %>%
+  gt_plt_bar_pct(
+    Spesifisitas,
+    labels = TRUE,
+    fill = "forestgreen",
+    scaled = TRUE
+  ) %>%
+  cols_label(
+    Author = "Peneliti",
+    Year = "Tahun",
+    Region = "Negara",
+    "Case-control" = "Kasus-Kontrol"
+  ) %>%
+  cols_hide(columns = c(Sensitivity, Specificity))
+
+dt_DCP
+```
+
+## GPC-3
+
+```{r}
+#| label: tbl-gpc3
+#| message: false
+#| warning: false
+#| echo: false
+#| tbl-cap: "Data performa diagnostik Golgi Protein-3 sebagai marker Karsinoma Hepatoselular."
+
+
+GPC3 <- lengkap %>% 
+      select(No, Biomarker, Author, Year, Region, 'Case-control', Sensitivity, Specificity) %>%
+      filter(Biomarker == "GPC3")
+
+dt_GPC3 <- GPC3 %>% 
+  dplyr::mutate(
+    Sensitivitas = Sensitivity * 100,
+    Spesifisitas = Specificity * 100
+  ) %>%
+  gt() %>% 
+  gt_plt_bar_pct(
+    Sensitivitas,
+    labels = TRUE,
+    scaled = TRUE
+  ) %>%
+  gt_plt_bar_pct(
+    Spesifisitas,
+    labels = TRUE,
+    fill = "forestgreen",
+    scaled = TRUE
+  ) %>%
+  cols_label(
+    Author = "Peneliti",
+    Year = "Tahun",
+    Region = "Negara",
+    "Case-control" = "Kasus-Kontrol"
+  ) %>%
+  cols_hide(columns = c(Sensitivity, Specificity))
+
+dt_GPC3
+```
+
+## DKK-1
+
+```{r}
+#| label: tbl-dkk1
+#| message: false
+#| warning: false
+#| echo: false
+#| tbl-cap: "Data performa diagnostik DKK-1 sebagai marker Karsinoma Hepatoselular."
+
+
+DKK1 <- lengkap %>% 
+      select(No, Biomarker, Author, Year, Region, 'Case-control', Sensitivity, Specificity) %>%
+      filter(Biomarker == "DKK1")
+
+dt_DKK1 <- DKK1 %>% 
+  dplyr::mutate(
+    Sensitivitas = Sensitivity * 100,
+    Spesifisitas = Specificity * 100
+  ) %>%
+  gt() %>% 
+  gt_plt_bar_pct(
+    Sensitivitas,
+    labels = TRUE,
+    scaled = TRUE
+  ) %>%
+  gt_plt_bar_pct(
+    Spesifisitas,
+    labels = TRUE,
+    fill = "forestgreen",
+    scaled = TRUE
+  ) %>%
+  cols_label(
+    Author = "Peneliti",
+    Year = "Tahun",
+    Region = "Negara",
+    "Case-control" = "Kasus-Kontrol"
+  ) %>%
+  cols_hide(columns = c(Sensitivity, Specificity))
+
+dt_DKK1
+```
+
+## AFP-L3
+
+```{r}
+#| label: tbl-afpl3
+#| message: false
+#| warning: false
+#| echo: false
+#| tbl-cap: "Data performa diagnostik AFP-L3 sebagai marker Karsinoma Hepatoselular."
+
+
+AFPL3 <- lengkap %>% 
+      select(No, Biomarker, Author, Year, Region, 'Case-control', Sensitivity, Specificity) %>%
+      filter(Biomarker == "AFP-L3")
+
+dt_AFPL3 <- AFPL3 %>% 
+  dplyr::mutate(
+    Sensitivitas = Sensitivity * 100,
+    Spesifisitas = Specificity * 100
+  ) %>%
+  gt() %>% 
+  gt_plt_bar_pct(
+    Sensitivitas,
+    labels = TRUE,
+    scaled = TRUE
+  ) %>%
+  gt_plt_bar_pct(
+    Spesifisitas,
+    labels = TRUE,
+    fill = "forestgreen",
+    scaled = TRUE
+  ) %>%
+  cols_label(
+    Author = "Peneliti",
+    Year = "Tahun",
+    Region = "Negara",
+    "Case-control" = "Kasus-Kontrol"
+  ) %>%
+  cols_hide(columns = c(Sensitivity, Specificity))
+
+dt_AFPL3
+```
+
+## AFU
+
+```{r}
+#| label: tbl-afu
+#| message: false
+#| warning: false
+#| echo: false
+#| tbl-cap: "Data performa diagnostik AFU sebagai marker Karsinoma Hepatoselular."
+
+
+AFU <- lengkap %>% 
+      select(No, Biomarker, Author, Year, Region, 'Case-control', Sensitivity, Specificity) %>%
+      filter(Biomarker == "AFU")
+
+dt_AFU <- AFU %>% 
+  dplyr::mutate(
+    Sensitivitas = Sensitivity * 100,
+    Spesifisitas = Specificity * 100
+  ) %>%
+  gt() %>% 
+  gt_plt_bar_pct(
+    Sensitivitas,
+    labels = TRUE,
+    scaled = TRUE
+  ) %>%
+  gt_plt_bar_pct(
+    Spesifisitas,
+    labels = TRUE,
+    fill = "forestgreen",
+    scaled = TRUE
+  ) %>%
+  cols_label(
+    Author = "Peneliti",
+    Year = "Tahun",
+    Region = "Negara",
+    "Case-control" = "Kasus-Kontrol"
+  ) %>%
+  cols_hide(columns = c(Sensitivity, Specificity))
+
+dt_AFU
+```
+
+## CA199
+
+```{r}
+#| label: tbl-ca199
+#| message: false
+#| warning: false
+#| echo: false
+#| tbl-cap: "Data performa diagnostik CA199 sebagai marker Karsinoma Hepatoselular."
+
+
+CA199 <- lengkap %>% 
+      select(No, Biomarker, Author, Year, Region, 'Case-control', Sensitivity, Specificity) %>%
+      filter(Biomarker == "CA199")
+
+dt_CA199 <- CA199 %>% 
+  dplyr::mutate(
+    Sensitivitas = Sensitivity * 100,
+    Spesifisitas = Specificity * 100
+  ) %>%
+  gt() %>% 
+  gt_plt_bar_pct(
+    Sensitivitas,
+    labels = TRUE,
+    scaled = TRUE
+  ) %>%
+  gt_plt_bar_pct(
+    Spesifisitas,
+    labels = TRUE,
+    fill = "forestgreen",
+    scaled = TRUE
+  ) %>%
+  cols_label(
+    Author = "Peneliti",
+    Year = "Tahun",
+    Region = "Negara",
+    "Case-control" = "Kasus-Kontrol"
+  ) %>%
+  cols_hide(columns = c(Sensitivity, Specificity))
+
+dt_CA199
+```
+
+
+## HSP-90 Alpha
+
+```{r}
+#| label: tbl-hsp90alpha
+#| message: false
+#| warning: false
+#| echo: false
+#| tbl-cap: "Data performa diagnostik HSP-90 Alpha sebagai marker Karsinoma Hepatoselular."
+
+
+hsp90alpha <- lengkap %>% 
+      select(No, Biomarker, Author, Year, Region, 'Case-control', Sensitivity, Specificity) %>%
+      filter(Biomarker == "Hsp90alpha")
+
+dt_hsp90alpha <- hsp90alpha %>% 
+  dplyr::mutate(
+    Sensitivitas = Sensitivity * 100,
+    Spesifisitas = Specificity * 100
+  ) %>%
+  gt() %>% 
+  gt_plt_bar_pct(
+    Sensitivitas,
+    labels = TRUE,
+    scaled = TRUE
+  ) %>%
+  gt_plt_bar_pct(
+    Spesifisitas,
+    labels = TRUE,
+    fill = "forestgreen",
+    scaled = TRUE
+  ) %>%
+  cols_label(
+    Author = "Peneliti",
+    Year = "Tahun",
+    Region = "Negara",
+    "Case-control" = "Kasus-Kontrol"
+  ) %>%
+  cols_hide(columns = c(Sensitivity, Specificity))
+
+dt_hsp90alpha
+```
+
+## Midkine
+
+```{r}
+#| label: tbl-midkine
+#| message: false
+#| warning: false
+#| echo: false
+#| tbl-cap: "Data performa diagnostik Midkine sebagai marker Karsinoma Hepatoselular."
+
+
+Midkine <- lengkap %>% 
+      select(No, Biomarker, Author, Year, Region, 'Case-control', Sensitivity, Specificity) %>%
+      filter(Biomarker == "Midkine")
+
+dt_Midkine <- Midkine %>% 
+  dplyr::mutate(
+    Sensitivitas = Sensitivity * 100,
+    Spesifisitas = Specificity * 100
+  ) %>%
+  gt() %>% 
+  gt_plt_bar_pct(
+    Sensitivitas,
+    labels = TRUE,
+    scaled = TRUE
+  ) %>%
+  gt_plt_bar_pct(
+    Spesifisitas,
+    labels = TRUE,
+    fill = "forestgreen",
+    scaled = TRUE
+  ) %>%
+  cols_label(
+    Author = "Peneliti",
+    Year = "Tahun",
+    Region = "Negara",
+    "Case-control" = "Kasus-Kontrol"
+  ) %>%
+  cols_hide(columns = c(Sensitivity, Specificity))
+
+dt_Midkine
+```
+
+## OPN
+
+```{r}
+#| label: tbl-opn
+#| message: false
+#| warning: false
+#| echo: false
+#| tbl-cap: "Data performa diagnostik OPN sebagai marker Karsinoma Hepatoselular."
+
+
+OPN <- lengkap %>% 
+      select(No, Biomarker, Author, Year, Region, 'Case-control', Sensitivity, Specificity) %>%
+      filter(Biomarker == "OPN")
+
+dt_OPN<- OPN %>% 
+  dplyr::mutate(
+    Sensitivitas = Sensitivity * 100,
+    Spesifisitas = Specificity * 100
+  ) %>%
+  gt() %>% 
+  gt_plt_bar_pct(
+    Sensitivitas,
+    labels = TRUE,
+    scaled = TRUE
+  ) %>%
+  gt_plt_bar_pct(
+    Spesifisitas,
+    labels = TRUE,
+    fill = "forestgreen",
+    scaled = TRUE
+  ) %>%
+  cols_label(
+    Author = "Peneliti",
+    Year = "Tahun",
+    Region = "Negara",
+    "Case-control" = "Kasus-Kontrol"
+  ) %>%
+  cols_hide(columns = c(Sensitivity, Specificity))
+
+dt_OPN
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
