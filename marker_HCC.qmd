@@ -39,7 +39,7 @@ library("gtExtras")
 
 lengkap <- googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1HpX1F35g2x28XQNtHGjz6gg3EIO0vZpevJLsJWswoVA/edit?gid=151019815#gid=151019815", sheet = "lengkap")
 
-lengkap_tipis <- lengkap %>% select(No, Biomarker, Author, Year, Region, 'Case-control', Sensitivity, Specificity)
+lengkap_tipis <- lengkap %>% select(No.total, Biomarker, Author, Year, Region, 'Case-control', Sensitivity, Specificity)
 
 dt_lengkap <- lengkap_tipis %>% 
   dplyr::mutate(
@@ -64,7 +64,19 @@ dt_lengkap <- lengkap_tipis %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Sensitivity, Specificity))
+  cols_hide(columns = c(Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_lengkap
 ```
@@ -107,7 +119,19 @@ dt_AFP <- AFP %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Biomarker,Sensitivity, Specificity))
+  cols_hide(columns = c(Biomarker,Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_AFP
 ```
@@ -150,7 +174,19 @@ dt_AFP_AFPL3 <- AFP_AFPL3 %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Biomarker,Sensitivity, Specificity))
+  cols_hide(columns = c(Biomarker,Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_AFP_AFPL3
 ```
@@ -193,7 +229,19 @@ dt_AFP_L3_DCP <- AFP_L3_DCP %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Biomarker,Sensitivity, Specificity))
+  cols_hide(columns = c(Biomarker,Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_AFP_L3_DCP
 ```
@@ -236,7 +284,19 @@ dt_AFP_DCP <- AFP_DCP %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Sensitivity, Specificity))
+  cols_hide(columns = c(Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_AFP_DCP
 ```
@@ -279,7 +339,19 @@ dt_AFP_GPC3 <- AFP_GPC3 %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Biomarker, Sensitivity, Specificity))
+  cols_hide(columns = c(Biomarker, Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_AFP_GPC3
 ```
@@ -322,7 +394,19 @@ dt_DCP <- DCP %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Sensitivity, Specificity))
+  cols_hide(columns = c(Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_DCP
 ```
@@ -364,7 +448,19 @@ dt_GPC3 <- GPC3 %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Sensitivity, Specificity))
+  cols_hide(columns = c(Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_GPC3
 ```
@@ -406,7 +502,19 @@ dt_DKK1 <- DKK1 %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Sensitivity, Specificity))
+  cols_hide(columns = c(Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_DKK1
 ```
@@ -448,7 +556,19 @@ dt_AFPL3 <- AFPL3 %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Sensitivity, Specificity))
+  cols_hide(columns = c(Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_AFPL3
 ```
@@ -490,7 +610,19 @@ dt_AFU <- AFU %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Sensitivity, Specificity))
+  cols_hide(columns = c(Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_AFU
 ```
@@ -532,7 +664,19 @@ dt_CA199 <- CA199 %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Sensitivity, Specificity))
+  cols_hide(columns = c(Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_CA199
 ```
@@ -575,7 +719,19 @@ dt_hsp90alpha <- hsp90alpha %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Sensitivity, Specificity))
+  cols_hide(columns = c(Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_hsp90alpha
 ```
@@ -617,7 +773,19 @@ dt_Midkine <- Midkine %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Sensitivity, Specificity))
+  cols_hide(columns = c(Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_Midkine
 ```
@@ -659,7 +827,19 @@ dt_OPN<- OPN %>%
     Region = "Negara",
     "Case-control" = "Kasus-Kontrol"
   ) %>%
-  cols_hide(columns = c(Sensitivity, Specificity))
+  cols_hide(columns = c(Sensitivity, Specificity)) %>%
+  opt_table_font(
+    font = "times new roman",
+    size = 12,
+    color = "black"
+  ) %>%
+  tab_style(
+    style = cell_text(
+      size = 14,
+      weight = "bold"
+    ),
+    locations = cells_column_labels()
+  )
 
 dt_OPN
 ```
