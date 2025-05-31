@@ -12,6 +12,7 @@ authors:
 bibliography: references.bib
 csl: wiryadana.csl
 tbl-cap-location: top
+output-dir: docs
 ---
 
 ```{r echo=F}
@@ -242,6 +243,6 @@ dt_AFP_DCP
 
 
 ```{bash}
-cp marker_HCC.html docs/index.html
+#cp marker_HCC.html docs/index.html
 ```
 
