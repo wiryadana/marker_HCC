@@ -239,3 +239,9 @@ dt_AFP_DCP <- AFP_DCP %>%
 
 dt_AFP_DCP
 ```
+
+
+```{bash}
+cp marker_HCC.html docs/index.html
+```
+
